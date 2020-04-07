@@ -1,6 +1,7 @@
 import pandas as pd
 import nltk
 import numpy as np
+import os
 
 START_TOKEN = '<START>'
 END_TOKEN = '<END>'
@@ -20,9 +21,9 @@ Word\t POS Tag\t syntactic chunk tag\t named entity tag\t line number
 The data contains multiple lines given in the line number column.
 '''
     print(data_format)
-    !wget -nc "https://github.com/davidsbatista/NER-datasets/raw/master/CONLL2003/test.txt" -O 'test.txt'
-    !wget -nc "https://github.com/davidsbatista/NER-datasets/raw/master/CONLL2003/train.txt" -O 'train.txt'
-    !wget -nc "https://github.com/davidsbatista/NER-datasets/raw/master/CONLL2003/valid.txt" -O 'valid.txt'
+    os.system('!wget -nc "https://github.com/davidsbatista/NER-datasets/raw/master/CONLL2003/test.txt" -O "test.txt" ')
+    os.system('!wget -nc "https://github.com/davidsbatista/NER-datasets/raw/master/CONLL2003/train.txt" -O "train.txt" ')
+    os.system('!wget -nc "https://github.com/davidsbatista/NER-datasets/raw/master/CONLL2003/valid.txt" -O "valid.txt" ')
 
     with open ('test.txt') as f:
         next(f)
